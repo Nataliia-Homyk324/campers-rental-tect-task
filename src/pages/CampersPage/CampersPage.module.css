@@ -1,0 +1,16 @@
+.container{
+    width: 100%;
+    max-width: 1440px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    display: flex;
+    gap: 60px;
+    
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    fill: #FFC531;  
+}

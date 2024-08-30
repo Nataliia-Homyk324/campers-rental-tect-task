@@ -1,0 +1,158 @@
+ .container {
+   
+    width: 888px;
+    height: 368px;
+    display: flex;
+    padding: 24px;
+    align-items: flex-start;
+    gap: 24px;
+    border-radius: 20px;
+    border: 1px solid #dadde1;
+    background: #ffffff;
+}
+
+.photo {
+    width: 292px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.data {
+   position: relative;
+   width: 100%;
+   height: 100%;
+  
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+   margin-bottom: 16px;
+}
+
+.name {
+    color: #101828;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px ;
+    
+}
+
+.price {
+    color: #101828;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px ;
+}
+
+
+
+.text {
+    color: #101828;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+   
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+   
+}
+.iconStar{
+    width: 16px;
+    height: 16px;
+    fill:gold;
+}
+
+.location {
+    color: #101828;
+    font-size: 16px;
+    font-weight: 400;
+    /* line-height: 1.5; */
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.iconLocation{
+    width: 16px;
+    height: 16px;
+    fill:#101828;
+}
+
+.iconRedHeart{
+    fill: red;
+    width: 26px;
+    height: 24px;
+    margin-left: 8px;
+    transform: translateY(2px);
+}
+
+.iconHeart {
+    fill: #101828 ;
+    width: 26px;
+    height: 24px;
+    margin-left: 8px;
+    transform: translateY(2px);
+}
+
+.description {
+    display: -webkit-box;
+    width: 525px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    color: #475467;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5em;
+    margin-bottom: 24px;
+    margin-top: 24px;
+}
+
+.showMoreBtn {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-decoration: none;
+    display: flex;
+    width: 166px;
+    height: 56px;
+    padding: 16px 18px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    border-radius: 200px;
+    background: #e44848;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+    transition: background 0.3s ease-in-out;
+   
+
+    
+}
+
+
+.showMoreBtn:hover {
+    background: #d84343;
+}
+
+.priceWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+

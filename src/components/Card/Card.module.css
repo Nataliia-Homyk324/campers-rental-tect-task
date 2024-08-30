@@ -1,0 +1,36 @@
+.card {
+    border: 1px solid #F7F7F7;
+    border-radius: 12px;
+    padding: 16px 40px;
+    width: 112px;
+    height: 96px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #101828;
+    transition: border-color 0.3s ease;
+
+}
+
+.card:hover,
+.card:focus {
+    border-color: #E44848;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    fill: #475467;
+    margin-bottom: 8px;
+
+}
+
+.labelIconsFilter {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    text-align: center;
+}
