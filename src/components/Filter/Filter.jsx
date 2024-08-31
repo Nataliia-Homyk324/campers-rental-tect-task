@@ -3,7 +3,9 @@ import style from "./Filter.module.css";
 import icons from "../../assets/icons/icons.svg";
 import Card from "../Card/Card.jsx";
 
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { selectLocation } from "../../redux/filter/selectors.js";
+import { setLocation } from "../../redux/filter/filterSlice.js";
 
 const cardDataEquipment = [
   { iconId: "icon-wind", label: "AC" },
@@ -20,10 +22,12 @@ const cardDataType = [
 ];
 
 const Filter = () => {
-  const [selectedLocation, setSelectedLocation] = useState("City");
+  const dispatch = useDispatch();
+  const location = useSelector(selectLocation);
 
   const handleLocationChange = (event) => {
-    setSelectedLocation(event.target.value); // Update state
+    const value = event.target.value;
+    dispatch(setLocation(value));
   };
   return (
     <div className={style.wrapper}>
@@ -34,7 +38,7 @@ const Filter = () => {
         </svg>
         <select
           className={style.select}
-          value={selectedLocation}
+          value={location}
           onChange={handleLocationChange}
         >
           <option value="City" disabled>
