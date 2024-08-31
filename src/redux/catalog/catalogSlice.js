@@ -29,16 +29,16 @@ const catalogSlice = createSlice({
         state.error = null;
 
         if (state.page === 1) {
-          // Якщо це перша сторінка, оновлюємо campers
-          // state.campers = action.payload.items;
-          state.campers = [];
+          
+          state.campers = action.payload.items;
+          // state.campers = [];
         } else {
-          // Додаємо нові campers до існуючого списку
+          
           state.campers = [...state.campers, ...action.payload.items];
         }
 
         state.total = action.payload.total;
-        state.page += 1; // Збільшуємо номер сторінки
+        state.page += 1; 
         state.hasMore = state.campers.length < state.total;
       })
       .addCase(fetchCampers.rejected, (state, action) => {
