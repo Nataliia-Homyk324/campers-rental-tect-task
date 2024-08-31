@@ -6,6 +6,7 @@ import {
   selectIsLoading,
 } from "../../redux/catalog/selectors.js";
 import {
+  selectLocation,
   selectAC,
   selectTransmission,
   selectKitchen,
@@ -27,6 +28,7 @@ export default function CampersList() {
   const campers = useSelector(selectAllCampers);
   const isLoading = useSelector(selectIsLoading);
 
+  const location = useSelector(selectLocation);
   const AC = useSelector(selectAC);
   const transmission = useSelector(selectTransmission);
   const kitchen = useSelector(selectKitchen);
@@ -39,6 +41,7 @@ export default function CampersList() {
 
   const filteredCampers = campers.filter((camper) => {
     return (
+      (!location || camper.location === location) &&
       (!AC || camper.AC) &&
       (!transmission || camper.transmission === "automatic") &&
       (!kitchen || camper.kitchen) &&

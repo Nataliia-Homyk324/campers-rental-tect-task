@@ -3,7 +3,7 @@ import style from "./Filter.module.css";
 import icons from "../../assets/icons/icons.svg";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  // selectLocation,
+  selectLocation,
   selectAC,
   selectTransmission,
   selectKitchen,
@@ -24,11 +24,12 @@ import {
   toggleFullyIntegrated,
   toggleGas,
 } from "../../redux/filter/filterSlice";
+import { fetchCampers } from "../../redux/catalog/operations.js";
 
 const Filter = () => {
   const dispatch = useDispatch();
 
-  // const location = useSelector(selectLocation);
+  const location = useSelector(selectLocation);
   const isACSelected = useSelector(selectAC);
   const isTransmissionSelected = useSelector(selectTransmission);
   const isKitchenSelected = useSelector(selectKitchen);
@@ -40,6 +41,10 @@ const Filter = () => {
 
   const handleLocationChange = (event) => {
     dispatch(setLocation(event.target.value));
+  };
+
+  const handleSearch = () => {
+    dispatch(fetchCampers()); // викликати операцію для завантаження кемперів з оновленими фільтрами
   };
 
   return (
@@ -168,7 +173,9 @@ const Filter = () => {
         </button>
       </div>
 
-      <button className={style.searchButton}>Search</button>
+      <button className={style.searchButton} onClick={handleSearch}>
+        Search
+      </button>
     </div>
   );
 };
