@@ -5,13 +5,14 @@
     flex-direction: column;
     margin: 0 auto;
 }
-.moreInfo{
-    width: 206px;
+/* .moreInfo{
+    width: 100%;
     padding-bottom: 24px;
     display: flex;
     flex-direction: start;
     gap: 40px;
     margin: 24px 0;
+    border-bottom: 3px solid #F2F4F7;
    
 }
 .navLink {
@@ -31,5 +32,48 @@
 
 .navLink:hover,
 .navLink:focus {
+    color: #D84343;
+} */
+
+.moreInfo {
+    width: 100%;
+    padding-bottom: 24px;
+    display: flex;
+    align-items: flex-start;
+    /* Виправлено з 'flex-direction: start' на 'align-items' для правильного вирівнювання */
+    gap: 40px;
+    margin: 24px 0;
+    border-bottom: 3px solid #F2F4F7;
+    position: relative;
+}
+
+.navLink {
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    color: #101828;
+    line-height: 1.5;
+    transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.navLinkActive {
+    color: #101828;
+}
+
+.navLinkActive::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -27px;
+    width: 100%;
+    height: 4px;
+    background-color: #D84343;
+    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navLink:hover {
     color: #D84343;
 }
