@@ -5,6 +5,17 @@ import {
   selectHasMore,
   selectIsLoading,
 } from "../../redux/catalog/selectors.js";
+import {
+  selectAC,
+  selectTransmission,
+  selectKitchen,
+  selectTV,
+  selectBathroom,
+  selectRadio,
+  selectGas,
+  selectVan,
+  selectFullyIntegrated,
+} from "../../redux/filter/selectors.js";
 import { fetchCampers } from "../../redux/catalog/operations.js";
 import CamperItem from "../CamperItem/CamperItem.jsx";
 import toast from "react-hot-toast";
@@ -16,6 +27,30 @@ export default function CampersList() {
   const campers = useSelector(selectAllCampers);
   const isLoading = useSelector(selectIsLoading);
 
+  const AC = useSelector(selectAC);
+  const transmission = useSelector(selectTransmission);
+  const kitchen = useSelector(selectKitchen);
+  const TV = useSelector(selectTV);
+  const bathroom = useSelector(selectBathroom);
+  const radio = useSelector(selectRadio);
+  const gas = useSelector(selectGas);
+  const fullyIntegrated = useSelector(selectFullyIntegrated);
+  const van = useSelector(selectVan);
+
+  const filteredCampers = campers.filter((camper) => {
+    return (
+      (!AC || camper.AC) &&
+      (!transmission || camper.transmission === "automatic") &&
+      (!kitchen || camper.kitchen) &&
+      (!TV || camper.TV) &&
+      (!bathroom || camper.bathroom) &&
+      (!radio || camper.radio) &&
+      (!gas || camper.gas) &&
+      (!fullyIntegrated || camper.fullyIntegrated) &&
+      (!van || camper.van)
+    );
+  });
+
   async function getNextPageCamper() {
     try {
       await dispatch(fetchCampers()).unwrap();
@@ -24,10 +59,13 @@ export default function CampersList() {
       toast.error("Failed to load vehicles!");
     }
   }
+
   return (
     <div className={styles.container}>
-      {campers.length > 0
-        ? campers.map((item) => <CamperItem key={item.id} data={item} />)
+      {filteredCampers.length > 0
+        ? filteredCampers.map((item, index) => (
+            <CamperItem key={`${item.id}-${index}`} data={item} />
+          ))
         : null}
       {hasNextPage ? (
         <button

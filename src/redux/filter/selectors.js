@@ -1,3 +1,4 @@
+
 export const selectLocation = state => state.filter.location;
 export const selectForm = state => state.filter.form;
 export const selectAC = state => state.filter.AC;
@@ -5,6 +6,7 @@ export const selectTransmission = state => state.filter.transmission;
 export const selectKitchen = state => state.filter.kitchen;
 export const selectTV = state => state.filter.TV;
 export const selectBathroom = state => state.filter.bathroom;
-export const selectVan = state => state.filter.van;
+export const selectRadio = state => state.filter.radio;
+export const selectGas = state => state.filter.gas;
 export const selectFullyIntegrated = state => state.filter.fullyIntegrated;
-export const selectAlcove = state => state.filter.alcove;
+export const selectVan = state => state.filter.van;
