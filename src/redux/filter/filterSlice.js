@@ -12,7 +12,7 @@ const initialState = {
   radio: false,
   van: false,
   fullyIntegrated: false,
-  gas: false,
+  alcove: false,
 };
 
 const filterSlice = createSlice({
@@ -43,8 +43,8 @@ const filterSlice = createSlice({
     toggleRadio: (state) => {
       state.radio = !state.radio;
     },
-    toggleGas: (state) => {
-      state.gas = !state.gas;
+    toggleAlcove: (state) => {
+      state.alcove = !state.alcove;
     },
     toggleVan: (state) => {
       state.van = !state.van;
@@ -64,7 +64,7 @@ export const {
   toggleTV,
   toggleBathroom,
   toggleRadio,
-  toggleGas,
+  toggleAlcove,
   toggleVan,
   toggleFullyIntegrated,
 } = filterSlice.actions;

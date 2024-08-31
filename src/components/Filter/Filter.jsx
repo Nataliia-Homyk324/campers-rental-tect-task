@@ -11,7 +11,7 @@ import {
   selectBathroom,
   selectVan,
   selectFullyIntegrated,
-  selectGas,
+  selectAlcove,
 } from "../../redux/filter/selectors";
 import {
   setLocation,
@@ -22,7 +22,7 @@ import {
   toggleBathroom,
   toggleVan,
   toggleFullyIntegrated,
-  toggleGas,
+  toggleAlcove,
 } from "../../redux/filter/filterSlice";
 import { fetchCampers } from "../../redux/catalog/operations.js";
 
@@ -37,7 +37,7 @@ const Filter = () => {
   const isBathroomSelected = useSelector(selectBathroom);
   const isVanSelected = useSelector(selectVan);
   const isFullyIntegratedSelected = useSelector(selectFullyIntegrated);
-  const isGasSelected = useSelector(selectGas);
+  const isAlcoveSelected = useSelector(selectAlcove);
 
   const handleLocationChange = (event) => {
     dispatch(setLocation(event.target.value));
@@ -163,8 +163,8 @@ const Filter = () => {
         </button>
 
         <button
-          className={`${style.card} ${isGasSelected ? style.selected : ""}`}
-          onClick={() => dispatch(toggleGas())}
+          className={`${style.card} ${isAlcoveSelected ? style.selected : ""}`}
+          onClick={() => dispatch(toggleAlcove())}
         >
           <svg className={style.icon}>
             <use href={`${icons}#icon-bi_grid-3x3-gap`}></use>

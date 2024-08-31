@@ -13,7 +13,7 @@ import {
   selectTV,
   selectBathroom,
   selectRadio,
-  selectGas,
+  selectAlcove,
   selectVan,
   selectFullyIntegrated,
 } from "../../redux/filter/selectors.js";
@@ -35,7 +35,7 @@ export default function CampersList() {
   const TV = useSelector(selectTV);
   const bathroom = useSelector(selectBathroom);
   const radio = useSelector(selectRadio);
-  const gas = useSelector(selectGas);
+  const alcove = useSelector(selectAlcove);
   const fullyIntegrated = useSelector(selectFullyIntegrated);
   const van = useSelector(selectVan);
 
@@ -48,7 +48,7 @@ export default function CampersList() {
       (!TV || camper.TV) &&
       (!bathroom || camper.bathroom) &&
       (!radio || camper.radio) &&
-      (!gas || camper.gas) &&
+      (!alcove || camper.alcove) &&
       (!fullyIntegrated || camper.fullyIntegrated) &&
       (!van || camper.van)
     );

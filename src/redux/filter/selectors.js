@@ -7,6 +7,6 @@ export const selectKitchen = state => state.filter.kitchen;
 export const selectTV = state => state.filter.TV;
 export const selectBathroom = state => state.filter.bathroom;
 export const selectRadio = state => state.filter.radio;
-export const selectGas = state => state.filter.gas;
+export const selectAlcove = state => state.filter.alcove;
 export const selectFullyIntegrated = state => state.filter.fullyIntegrated;
 export const selectVan = state => state.filter.van;
