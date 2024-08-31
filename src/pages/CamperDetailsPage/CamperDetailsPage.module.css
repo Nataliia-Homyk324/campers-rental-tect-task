@@ -1,0 +1,35 @@
+.camperDetails{
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+.moreInfo{
+    width: 206px;
+    padding-bottom: 24px;
+    display: flex;
+    flex-direction: start;
+    gap: 40px;
+    margin: 24px 0;
+   
+}
+.navLink {
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    color: #101828;
+    line-height: 1.5;
+    transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navLinkActive {
+    color: #D84343;
+}
+
+.navLink:hover,
+.navLink:focus {
+    color: #D84343;
+}
