@@ -6,3 +6,8 @@
     height: 100%;
     justify-content: space-between;
 }
+
+.title{
+    margin: 60px;
+    color:lightgray;
+}
