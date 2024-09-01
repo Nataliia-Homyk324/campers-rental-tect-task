@@ -52,6 +52,9 @@ const filterSlice = createSlice({
     toggleFullyIntegrated: (state) => {
       state.fullyIntegrated = !state.fullyIntegrated;
     },
+    resetFilters: (state) => {
+      Object.assign(state, initialState);
+    },
   },
 });
 
@@ -67,6 +70,7 @@ export const {
   toggleAlcove,
   toggleVan,
   toggleFullyIntegrated,
+  resetFilters
 } = filterSlice.actions;
 
 export default filterSlice.reducer;

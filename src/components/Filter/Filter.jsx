@@ -44,7 +44,7 @@ const Filter = () => {
   };
 
   const handleSearch = () => {
-    dispatch(fetchCampers()); // викликати операцію для завантаження кемперів з оновленими фільтрами
+    dispatch(fetchCampers());
   };
 
   return (

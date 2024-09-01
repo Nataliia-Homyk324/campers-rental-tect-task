@@ -18,6 +18,7 @@ import {
   selectFullyIntegrated,
 } from "../../redux/filter/selectors.js";
 import { fetchCampers } from "../../redux/catalog/operations.js";
+import { resetFilters } from "../../redux/filter/filterSlice";
 import CamperItem from "../CamperItem/CamperItem.jsx";
 import toast from "react-hot-toast";
 import Loader from "../Loader/Loader.jsx";
@@ -56,6 +57,7 @@ export default function CampersList() {
 
   async function getNextPageCamper() {
     try {
+      dispatch(resetFilters());
       await dispatch(fetchCampers()).unwrap();
       toast.success("Campers loaded successfully!");
     } catch {
