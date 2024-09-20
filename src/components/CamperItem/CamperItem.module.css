@@ -1,7 +1,7 @@
  .container {
    
     width: 888px;
-    height: 368px;
+    /* height: 368px; */
     display: flex;
     padding: 24px;
     align-items: flex-start;

@@ -24,11 +24,11 @@ import {
   toggleFullyIntegrated,
   toggleAlcove,
 } from "../../redux/filter/filterSlice";
+
 import { fetchCampers } from "../../redux/catalog/operations.js";
 
 const Filter = () => {
   const dispatch = useDispatch();
-
   const location = useSelector(selectLocation);
   const isACSelected = useSelector(selectAC);
   const isTransmissionSelected = useSelector(selectTransmission);

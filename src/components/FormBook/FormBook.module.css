@@ -52,6 +52,7 @@
     height: 118px;
     border-radius: 10px;
     width: 527px;
+    resize: none;
 }
 
 .link {
